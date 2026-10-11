@@ -6,7 +6,7 @@
 | --- | --- |
 | Live product URL | **TODO: add after deploying** (see README → Deployment) |
 | Walkthrough video | **TODO: add after recording** (also in `WALKTHROUGH_URL.txt`) |
-| Source code | This folder (`source-code/`) |
+| Source code | This repository (GitHub link: **TODO: add repo URL**) |
 
 ## Test accounts
 
@@ -22,9 +22,14 @@ Password for all three on the live site: **TODO: the `DEMO_PASSWORD` you set whe
 
 ## What is included
 
+Everything is in this repository (the repo root is the submission):
+
 ```
-Draftly-Submission/
-├── source-code/            full project (no node_modules, builds, .git or .env files)
+draftly/
+├── client/                 React + Tiptap web app (source)
+├── server/                 Fastify API, SQL migrations, tests (source)
+├── scripts/smoke.mjs       end-to-end check for a running deployment
+├── Dockerfile, render.yaml, docker-compose.yml   deployment and local DB config
 ├── README.md               setup, run, build, test commands, demo accounts, supported uploads
 ├── ARCHITECTURE.md         components, schema, auth/access model, autosave, trade-offs
 ├── AI_WORKFLOW.md          AI tools used, what changed/was rejected, how it was verified
@@ -33,6 +38,7 @@ Draftly-Submission/
 └── screenshots/            dashboard.png, editor.png, sharing.png
 ```
 
+No `node_modules`, build output or `.env` files are committed (`.env.example` documents the variables).
 ## Run locally (short version)
 
 ```bash

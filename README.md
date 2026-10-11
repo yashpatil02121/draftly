@@ -107,8 +107,9 @@ Free hosting tiers may sleep when idle, so the first request can be slow. Verify
 ```
 client/   React app (pages, editor toolbar, share dialog, autosave hook, API client)
 server/   Fastify API (routes, repositories, importer service, migrations, tests)
-docs/     ARCHITECTURE.md, AI_WORKFLOW.md
 scripts/  smoke.mjs end-to-end check
+screenshots/  dashboard, editor, sharing
+ARCHITECTURE.md  AI_WORKFLOW.md  SUBMISSION.md  WALKTHROUGH_URL.txt
 ```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for design decisions and trade-offs and [docs/AI_WORKFLOW.md](docs/AI_WORKFLOW.md) for how AI was used.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions and trade-offs, [AI_WORKFLOW.md](AI_WORKFLOW.md) for how AI was used, and [SUBMISSION.md](SUBMISSION.md) for the review checklist.
