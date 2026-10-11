@@ -6,7 +6,7 @@
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Live product URL  | https://draftly-nwc5.onrender.com (free tier: first load after idle may take up to a minute)                        |
 | Walkthrough video | https://drive.google.com/file/d/1GkeP4cd3c9BQrF3Tk0asQTxicMGdNnMR/view?usp=sharing (also in`WALKTHROUGH_URL.txt`) |
-| Source code       | This repository (GitHub link:**TODO: add repo URL**)                                                          |
+| Source code (GitHub) | https://github.com/yashpatil02121/draftly |
 
 ## Test accounts
 
