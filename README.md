@@ -4,6 +4,8 @@ A lightweight document workspace: create and rich-text edit documents, import `.
 
 **Live demo:** https://draftly-nwc5.onrender.com (demo accounts and password in [SUBMISSION.md](SUBMISSION.md)). It runs on a free tier, so the first request after idle can take up to a minute.
 
+**Source:** https://github.com/yashpatil02121/draftly
+
 ![Dashboard](screenshots/dashboard.png)
 
 ## Features
