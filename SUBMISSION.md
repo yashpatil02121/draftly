@@ -5,7 +5,7 @@
 | Item | Value |
 | --- | --- |
 | Live product URL | https://draftly-nwc5.onrender.com (free tier: first load after idle may take up to a minute) |
-| Walkthrough video | **TODO: add after recording** (also in `WALKTHROUGH_URL.txt`) |
+| Walkthrough video | https://drive.google.com/file/d/1GkeP4cd3c9BQrF3Tk0asQTxicMGdNnMR/view?usp=sharing (also in `WALKTHROUGH_URL.txt`) |
 | Source code | This repository (GitHub link: **TODO: add repo URL**) |
 
 ## Test accounts
@@ -67,7 +67,7 @@ Full instructions: `README.md`.
 | Automated tests | ✅ 20 API tests pass |
 | Architecture note, AI workflow note | ✅ `ARCHITECTURE.md`, `AI_WORKFLOW.md` |
 | Live deployment | ✅ Deployed on Render at https://draftly-nwc5.onrender.com (health check and SPA routing confirmed). The 13-check `scripts/smoke.mjs` run against the live URL: **TODO: confirm and note result** |
-| Walkthrough video | ⏳ Not yet recorded |
+| Walkthrough video | ✅ Recorded (Google Drive link above) |
 
 ## Known limitations
 
