@@ -41,11 +41,11 @@ document_shares(document_id → documents, shared_with_user_id → users,
 * Seeded demo users, bcrypt hashes, short-lived (8 h) JWT. The user id is read **only** from the verified token; the client never sends a user id. Login errors are identical for unknown email and wrong password, a dummy hash is compared for unknown emails to even out timing, and login is rate-limited (20/min/IP).
 * Authorization is enforced **in the API**, not the UI. A single query (`getForUser`) returns a document only if the caller owns it or has a share, along with their role. Handlers then apply the matrix:
 
-| Action | Owner | Viewer | Everyone else |
-| --- | --- | --- | --- |
-| Read | ✅ | ✅ (while shared) | 404 |
-| Edit / rename / delete | ✅ | 403 | 404 |
-| List / add / remove shares | ✅ | 403 | 404 |
+| Action                     | Owner | Viewer            | Everyone else |
+| -------------------------- | ----- | ----------------- | ------------- |
+| Read                       | ✅    | ✅ (while shared) | 404           |
+| Edit / rename / delete     | ✅    | 403               | 404           |
+| List / add / remove shares | ✅    | 403               | 404           |
 
 * Inaccessible documents return **404, not 403**, so document ids can't be probed. A viewer, who already knows the document exists, gets an explicit 403 on writes. The UI hides controls for viewers, but that is a convenience only.
 * All SQL is parameterized.
@@ -80,23 +80,15 @@ Not covered by automated tests: the React UI (verified manually in a browser ins
 
 ## Deliberate scope cuts
 
-| Cut | Why |
-| --- | --- |
-| Real-time collaboration, comments, version history | Optional stretch; would dilute the core flow |
-| Registration, password reset, email verification | Seeded accounts demonstrate multi-user logic at a fraction of the cost |
-| Editor role (shared edit) | Viewer-only keeps the permission matrix small and fully tested |
-| Attachments / object storage | Importing into a document is the more product-relevant use of upload |
-| Client-side tests | Time went to API and access-control tests, where bugs are costly |
-| Token revocation / refresh tokens | 8 h access token is enough for a demo |
+| Cut                                                | Why                                                                    |
+| -------------------------------------------------- | ---------------------------------------------------------------------- |
+| Real-time collaboration, comments, version history | Optional stretch; would dilute the core flow                           |
+| Registration, password reset, email verification   | Seeded accounts demonstrate multi-user logic at a fraction of the cost |
+| Editor role (shared edit)                          | Viewer-only keeps the permission matrix small and fully tested         |
+| Attachments / object storage                       | Importing into a document is the more product-relevant use of upload   |
+| Client-side tests                                  | Time went to API and access-control tests, where bugs are costly       |
+| Token revocation / refresh tokens                  | 8 h access token is enough for a demo                                  |
 
 ## Deployment choice
 
 A single Docker service (API + static client) plus managed Postgres, instead of three vendors. It removes CORS and cross-origin config and leaves a single thing to deploy, health-check and debug. The cost is that the frontend isn't on a CDN, which is irrelevant at this scale.
-
-## What I'd build next (2–4 hours)
-
-1. Optimistic concurrency: `version` column and a 409 on stale saves, with a "reload" prompt.
-2. `editor` permission (widen the CHECK, one extra branch in the access rule, tests).
-3. Share by email lookup instead of the seeded-user dropdown, plus a "shared with N people" badge on the dashboard.
-4. Client tests for the autosave hook (fake timers) and a Playwright run of the share flow.
-5. Export to Markdown/PDF.
