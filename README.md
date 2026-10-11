@@ -2,7 +2,7 @@
 
 A lightweight document workspace: create and rich-text edit documents, import `.txt` / `.md` / `.docx` files, and share documents read-only with other users.
 
-**Live demo:** _see [SUBMISSION.md](SUBMISSION.md) for the URL and test accounts_
+**Live demo:** https://draftly-nwc5.onrender.com (demo accounts and password in [SUBMISSION.md](SUBMISSION.md)). It runs on a free tier, so the first request after idle can take up to a minute.
 
 ![Dashboard](screenshots/dashboard.png)
 
