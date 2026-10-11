@@ -1,0 +1,11 @@
+{
+  "name": "draftly",
+  "private": true,
+  "scripts": {
+    "dev:server": "pnpm --filter server dev",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "build": "pnpm -r build"
+  },
+  "packageManager": "pnpm@10.30.3"
+}

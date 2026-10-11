@@ -1,0 +1,21 @@
+# Local development database. Credentials are throwaway dev values.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: draftly
+      POSTGRES_PASSWORD: draftly
+      POSTGRES_DB: draftly
+    ports:
+      - "5433:5432"
+    volumes:
+      - draftly-pgdata:/var/lib/postgresql/data
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U draftly"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  draftly-pgdata:
