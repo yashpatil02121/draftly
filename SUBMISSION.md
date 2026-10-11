@@ -39,6 +39,7 @@ draftly/
 ```
 
 No `node_modules`, build output or `.env` files are committed (`.env.example` documents the variables).
+
 ## Run locally (short version)
 
 ```bash
